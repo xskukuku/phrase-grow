@@ -1,0 +1,36 @@
+{
+  "name": "phrase-grow",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "词芽 PhraseGrow — AI 例句驱动的英语词汇复习工具",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development concurrently -k -n server,web -c green,cyan \"node --watch server/index.js\" \"vite --host 0.0.0.0\"",
+    "dev:server": "cross-env NODE_ENV=development node --watch server/index.js",
+    "dev:web": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "typecheck": "tsc --noEmit",
+    "check": "tsc --noEmit && vite build"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "lucide-react": "^0.468.0",
+    "pg": "^8.16.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.2.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.4"
+  }
+}
